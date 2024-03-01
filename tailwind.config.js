@@ -10,6 +10,16 @@ module.exports = {
         ...mauve,
         ...violet,
       },
+
+      fontFamily: {
+        Raleway: ["Raleway", "sans-serif"],
+        Poppins: ["Poppins ", "sans-serif"],
+        Lato: ["Lato", "sans-serif"],
+        "default-bold-body": "SF Pro Text",
+        "description-of-gotra": "Outfit",
+        "josefin-sans": "'Josefin Sans'",
+      },
+
       keyframes: {
         slideDown: {
           from: { height: "0px" },

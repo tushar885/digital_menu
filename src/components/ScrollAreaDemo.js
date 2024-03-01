@@ -15,7 +15,7 @@ const ScrollAreaDemo = ({
         </div> */}
         {Object.keys(menu).map((tag, index) => (
           <div
-            className={`text-mauve12 text-base leading-[18px] mt-2.5 pt-2.5 hover:cursor-pointer ${
+            className={`text-[#3d4152] font-Raleway font-semibold text-sm leading-[18px] mt-2.5 pt-2.5 hover:cursor-pointer ${
               index !== 0 ? " border-t" : ""
             }`}
             key={tag}

@@ -9,7 +9,7 @@ import { useState, useRef } from "react";
 const AccordionDemo2 = ({ activeAccordion, setActiveAccordion }) => {
   return (
     <Accordion.Root
-      className="bg-mauve6 max-w-4xl w-full rounded-md shadow-[0_2px_10px] shadow-black/5 my-8"
+      className="bg-mauve6 max-w-3xl w-full rounded-md shadow-[0_2px_10px] shadow-black/5 my-8 mt-1 "
       type="single"
       collapsible
       value={activeAccordion}
@@ -20,24 +20,41 @@ const AccordionDemo2 = ({ activeAccordion, setActiveAccordion }) => {
       {Object.keys(menu).map((category) => {
         return (
           <AccordionItem value={`${category}`} id={`${category}`}>
-            <AccordionTrigger className="font-bold hover:cursor-pointer">
-              {category}
+            <AccordionTrigger className="font-bold text-xl hover:cursor-pointer text-[#3e4152]">
+              {category} ({Object.keys(menu[category]).length})
             </AccordionTrigger>
-            <AccordionContent className="shadow-xl">
+            <AccordionContent className="shadow-xl ">
               {Object.keys(menu[category]).map((menuItem, index) => {
                 return (
-                  <>
-                    <div className="w-full flex justify-between p-4 gap-8">
-                      <p className="font-semibold ">{menuItem}</p>
-                      <p className="self-end">
-                        <span className="font-semibold">₹</span>{" "}
-                        {menu[category][menuItem]}
-                      </p>
+                  <div className="w-full flex flex-col justify-center items-center">
+                    <div className="w-full flex justify-between items-center p-4 gap-8 max-w-2xl">
+                      <div className="w-full flex flex-col justify-center items-start ">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/78/Indian-vegetarian-mark.svg"
+                          className="w-4 mb-2"
+                        />
+                        <p className="font-semibold text-[#3e4152]">
+                          {menuItem}
+                        </p>
+                        <p className=" text-nowrap">
+                          <span className="font-semibold">₹</span>{" "}
+                          {menu[category][menuItem]}
+                        </p>
+                        <p className="text-[#282C3F73] text-xs mt-3 ">
+                          Serves 1 | Mixed vegetables & noodles encased in
+                          crispy spring roll sheet served with sweet chilli
+                          sauce.342.88kcal
+                        </p>
+                      </div>
+                      <img
+                        src="https://t4.ftcdn.net/jpg/05/81/88/11/240_F_581881180_oZczFvKVbEaC8AxLDbxuO5zM2p2ztiw7.jpg"
+                        className="w-24 h-auto rounded-md shadow-md"
+                      />
                     </div>
                     {index != Object.keys(menu[category]).length - 1 ? (
-                      <Separator.Root className="bg-violet6 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px " />
+                      <Separator.Root className="bg-violet6 max-w-2xl data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px " />
                     ) : null}
-                  </>
+                  </div>
                 );
               })}
             </AccordionContent>
@@ -83,7 +100,7 @@ const AccordionTrigger = React.forwardRef(
     <Accordion.Header className="flex">
       <Accordion.Trigger
         className={classNames(
-          "text-violet11 shadow-mauve6 py-8 hover:bg-mauve2 group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-5 text-[15px] leading-none shadow-[0_1px_0] outline-none",
+          "text-[#3e4152] shadow-mauve6 py-8 hover:bg-mauve2 group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-5 text-[15px] leading-none shadow-[0_4px_0] outline-none",
           className
         )}
         {...props}
