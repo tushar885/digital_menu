@@ -1,4 +1,4 @@
-export default menu = {
+export default {
   Beverages: {
     Tea: 25,
     "Masala Tea": 25,
